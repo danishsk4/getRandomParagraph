@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paragraphs!!!!!</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: rgb(156, 155, 243);
+        }
+
+        #form {
+            height: 100px;
+            background-color: rgb(8, 7, 66);
+            color: aliceblue;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #label {
+            font-size: 20px;
+            letter-spacing: 2px;
+            margin-left: 5px;
+        }
+
+        #input {
+            width: 60px;
+            height: 30px;
+            margin: auto 20px;
+            /* margin: 7px; */
+        }
+
+        #btn {
+            width: 100px;
+            height: 30px;
+            font-size: 17px;
+            letter-spacing: 1px;
+            background-color: rgb(8, 7, 66);
+            outline: none;
+            color: aliceblue;
+            border: 1px solid aliceblue;
+            border-radius: 10px;
+            margin: 7px;
+        }
+
+        #textcontainer {
+            margin: auto;
+            padding: 25px 30px;
+        }
+
+        .p {
+            font-size: 22px;
+            letter-spacing: 1px;
+            text-align: justify;
+            color: rgb(8, 7, 66);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="form">
+        <div id="label">ENTER THE NO. OF PARAGRAPH</div>
+        <form action="">
+            <input name="input" type="number" id="input" autocomplete="off" autofocus>
+            <button type="button" id="btn">Get-Paras</button>
+        </form>
+    </div>
+    <div class="textcontainer" id="textcontainer">
+
+    </div>
+
+    <script>
+        let text = [
+
+            "   dolor sit amet, consectetur adipisicing elit. Alias in eos temporibus corrupti vel deleniti laboriosam eveniet. Atque, consequatur excepturi.",
+
+            "   Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique rerum odio nesciunt vel consequuntur quasi.",
+
+            "   consectetur adipisicing elit. Facere molestiae id alias vitae! Quibusdam in eaque, enim ex tenetur laudantium voluptatem. Repellendus obcaecati perferendis earum, numquam deleniti aliquam excepturi, totam, alias tenetur impedit dolores.",
+
+            "   enim ex tenetur laudantium voluptatem. Repellendus obcaecati perferendis adipisicing elit. Similique rerum deleniti laboriosam eveniet. enim ex tenetur laudantium voluptatem. Repellendus obcaecati perferendis",
+
+            "   voluptatum quae cupiditate harum, perferendis cum qui laboriosam temporibus maxime, nisi voluptates dignissimos consectetur, labore asperiores reprehenderit. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum praesentium illo quod commodi",
+
+            "   velit doloremque laboriosam ? Deserunt similique quisquam consectetur.Tempora facilis nisi expedita repellendus animi odio do11loremque facere mollitia maxime ipsam hic officiis vel laboriosam fugit vitae repellat consequuntur, veniam corrupti optio quae minima, sapiente dolores! Dolores.",
+
+            "   Lorem ipsum dolor sit amet consectetur adipisicing elit. Non aliquam omnis quod soluta rem hic doloremque libero tenetur cupiditate Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque, quaerat.",
+
+            "   nulla beatae ducimus molestiae eveniet! Voluptate qui atque necessitatibus aspernatur voluptatum! Eaque, alias quisquam! Voluptas dolores nulla ullam, maiores quam repellendus reiciendis sed optio architecto necessitatibus cupiditate voluptate quibusdam quo magnam numquam officia nemo? Inventore magnam in necessitatibus dignissimos?",
+
+            "   optio architecto necessitatibus cupiditate voluptate quibusdam quo magnam numquam officia nemo? Inventore magnam in necessitatibus dignissimos? dolor sit amet consectetur adipisicing elit. Eaque, quaerat. reiciendis sed optio architecto necessitatibus cupiditate voluptate ",
+
+
+            "   sit amet consectetur adipisicing elit. Dolore nulla sequi itaque dicta praesentium minima, obcaecati enim non, eligendi, accusamus distinctio illo inventore. Similique, esse magnam accusantium illum quisquam dolores saepe accusamus mollitia aspernatur dicta aliquam tenetur ullam suscipit aperiam et excepturi iusto. Minima ratione voluptatem sequi quos magni earum."
+        ]
+
+
+        let btn = document.getElementById("btn");
+        let textcontainer = document.getElementById("textcontainer");
+        btn.addEventListener("click", () => {
+            textcontainer.innerText = ""
+            let inputNum = document.getElementById("input").value;
+
+            if (inputNum > 10 || inputNum < 0) {
+                textcontainer.innerHTML = `<p class="p">plz select number in range of 1-10 </p>`
+            } else {
+                for (let i = 1; i <= inputNum; i++) {
+                    let paraText = text[Math.floor(Math.random() * text.length)]
+                    console.log(paraText);
+                    textcontainer.innerHTML += `<p class="p">${i}) ${paraText}</p>`
+                }
+            }
+        })
+
+
+    </script>
+</body>
+
+</html>
